@@ -1,0 +1,98 @@
+{% load static %}
+<html>
+<head>
+	<title>Facebook</title>
+<style>
+
+h1{color:#4169E1;
+	background-color: AliceBlue  }
+
+h2{color:black;
+	background-color: AliceBlue 
+	 }
+
+a{color: white}
+
+.btn{
+	color: blue;
+	background-color: white;
+	border-color: ;
+}
+
+body{   
+	 background: url("/static/images/facebook.jpeg") ; 
+	  color : white;
+	  font-size: 20;
+	  padding-top: 20;
+
+     }
+</style>
+</head>
+<body>
+	<form action="register" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		
+<br>
+<h2 align>Facebook</h2>
+<center>
+	<br><br><br><br><br><br><br><br>
+	<table>
+	<tr> 
+		<td><b>Username : &nbsp </td>
+		<td><input type="text" name="username" required></td></b>
+	</tr>
+
+	<td><br><br></td>
+
+	<tr> 
+
+		<td><b>Password : &nbsp </td>
+		<td><input type="text" name="password" required></td></b>
+	</tr>
+
+	<td><br><br></td>
+
+	<tr> 
+
+		<td><b>Confirm Password : &nbsp </td>
+		<td><input type="text" name="cpassword" required></td></b>
+	</tr>
+
+	<td><br><br></td>
+
+
+	<tr> 
+
+		<td><b>Profile Image &nbsp </td>
+		<td>
+
+			
+			<input type="file" name="img" accept="image/gif, image/jpeg, image/png">
+  			<button type="submit">Upload</button>
+
+
+		</td></b>
+	</tr>
+
+	<td><br><br></td>
+
+
+	<tr> 
+		<td  colspan="4"><h3 align="center" ><input type="submit" value="  Sign Up  " class="btn" required></td></b>
+	</tr>
+	
+	<td><br><br></td>
+
+
+		<tr>
+		<td><a href="index">Already Registered ? Log in  </a></td>
+		
+	</tr>
+
+
+
+</table>
+</center>
+</form>
+</body>
+</html>

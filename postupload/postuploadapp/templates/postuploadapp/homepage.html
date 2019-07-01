@@ -1,0 +1,81 @@
+{% load staticfiles %}
+<html>
+<head>
+	<title>Facebook</title>
+<style>
+
+h1{color:#4169E1;
+	background-color: AliceBlue  }
+
+h2{color:black;
+	background-color: AliceBlue 
+	 }
+
+a{color: white}
+
+.btn{
+	color: blue;
+	background-color: white;
+	border-color: ;
+}
+
+body{   
+	 background: url("/static/images/facebook.jpeg") ; 
+	  color : white;
+	  font-size: 20;
+
+     }
+</style>
+  <script>
+    history.pushState(null, null, null);
+    window.addEventListener('popstate', function () {
+        history.pushState(null, null, null);
+    });
+</script>
+</head>
+<body background:url('C:/Mscit/yudiz/postupload/postuploadapp/static/images/facebook.jpeg') 50% 0 no-repeat fixed;>
+	<form action="loginvalid" method="POST">
+		{% csrf_token %}
+<br>
+<h2 align>Login to Facebook</h2>
+<h3 align="right"> <a href="signup">New User ? Click to Sign Up</a></h3>
+<center>
+	<br><br><br><br><br><br><br>
+	<table>
+	<tr> 
+		<td><b>Username : &nbsp </td>
+		<td><input type="text" name="username" required></td></b>
+	</tr>
+
+	<td><br><br></td>
+
+	<tr> 
+
+		<td><b>Password : &nbsp </td>
+		<td><input type="text" name="password" required></td></b>
+	</tr>
+
+	<td><br><br></td>
+
+	<tr> 
+		<td  colspan="4"><h3 align="center" ><input type="submit" value="  Login  " class="btn" required></td></b>
+	</tr>
+	
+	<td><br><br></td>
+
+	<tr>
+		<td><a href="forgot">Forgot Password ? </a></td>
+	</tr>
+		<td><br></td>
+		<tr>
+		<td><a href="signup">Sign up </a></td>
+		
+	</tr>
+
+
+
+</table>
+</center>
+</form>
+</body>
+</html>

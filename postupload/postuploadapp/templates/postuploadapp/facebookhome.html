@@ -1,0 +1,173 @@
+{% load staticfiles %}
+<html>
+<head>
+	<title>Facebook</title>
+<style>
+
+h1{color:#4169E1;
+	background-color: Dark;
+	  }
+
+h2{color:black;
+	background-color: AliceBlue;
+	 }
+
+a{color: green}
+
+.btn{
+	color: blue;
+	background-color: white;
+	border-color: ;
+}
+
+.btns{
+	color: black;
+	font-family: cursive;
+	background-color: white;
+	border-color: black;
+	border-radius: 10px 10px 10px;
+	height: 40px;
+	width: 150px;
+
+}
+
+body{   
+	  background-color:Snow; 
+	
+	  font-size: 20;
+
+
+     }
+
+.round{
+	   border-radius: 20px 100px;
+}
+
+
+</style>
+</head>
+<body>
+	 <h6 align="right">Logged in as : {{request.session.name}}</h6>
+	<h2 align="right" ><a href="logout">Logout </a></h2>
+{% for i in u %}
+
+<h1> Welcome,{{i.username}}</h1>
+
+ <img src="{{ i.pimg }}" class="round" width="300"/>
+
+
+<br>
+<form action="searchfriend" method="GET">
+<h2 align="right"> Search Friends :<input type="text" name="search">
+<input type="submit" value="Search"></h2>
+</form>
+{% endfor %}
+</body>
+
+
+
+
+
+
+<br><br>
+<h2>
+
+
+{% for j in f %}
+	<h1> Yudiz Facebook </h1>
+<hr>
+<br><b>
+List of Friends are :</b>
+<form action="friendsprofile" method="GET">
+<br>
+<table>
+<tr><td>
+<img src="{{ j.pimg }}" class="round" width="300"/></td>
+<br>
+<td>&nbsp &nbsp &nbsp &nbsp</td>
+<td>
+<input type="submit" value="{{j.username}}" name="usernames" class="btns"></td>
+
+</table>
+<br>
+</form>
+
+<form action="friendrequest" method="GET">
+<td>&nbsp &nbsp<input type="hidden" value={{j.username}} name="username" class="btn">
+ <input type="submit" value="Send Request">
+
+</td></tr>
+</form>
+<br>
+
+{% endfor %}
+
+
+
+
+
+
+<hr>
+<h1 align="left"><a href="flist">Friend list</a></h1>
+{% for i in myfriendlist %}
+<table align="center">
+<tr>
+	<th> <h2>Name</h2></th>
+	<th> <h2>Status</h2> </th>
+	<br>
+</tr>
+	<tr>
+ <td><h1> {{i.friend}} &nbsp &nbsp</h1></td>
+ <td><h1> {{i.status}} </td></h1>
+ <td>
+
+ <form action="requeststatustrue" method="GET">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ <input type="hidden" value={{i.friend}} name="username">
+ <input type="submit" value="Accept">
+<td></form>
+
+<td>
+ <form action="requeststatusfalse" method="GET">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ <input type="hidden" value={{i.friend}} name="username">
+ <input type="submit" value="Reject" >
+
+  </td></form>
+ 	
+</tr>
+</table>
+
+{% endfor %}
+<hr>
+
+
+
+
+
+
+
+
+{% for k in frienddetails %}
+
+<h1> {{k.username}} </h1>
+	<h1> <img src="{{ k.pimg }}" class="round"  width="300"/></h1>
+	<br>
+
+ Status : <b>.Net Developer</b><br>
+
+ Gender : <b>Male</b><br>
+
+ Relationship Status : <b> Complicated</b><br>
+</h2>
+
+{% endfor %}
+
+
+
+
+
+
+</table>
+</center>
+</form>
+</body>
+</html>
