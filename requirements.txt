@@ -1,4 +1,4 @@
-requests
+Django==2.1.5
 pymongo
 gunicorn
 whitenoise
