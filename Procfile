@@ -1,1 +1,1 @@
-web: gunicorn postupload.wsgi --log-file -
+web: gunicorn app:postupload --log-file=-
